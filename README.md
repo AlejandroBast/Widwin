@@ -9,7 +9,7 @@ Aplicación de escritorio para Windows que te deja crear **widgets personalizado
 | **Última versión** | [**Descargar DeskWidgets para Windows**](https://github.com/AlejandroBast/Widwin/releases/latest) |
 | **Todas las versiones** | [Releases](https://github.com/AlejandroBast/Widwin/releases) |
 
-Descarga el instalador `DeskWidgets-Setup-x.y.z.exe` desde la última release y ejecútalo.
+Descarga el instalador `DeskWidgets-Setup-x.y.z.exe` (recomendado) o la versión sin instalación `DeskWidgets-Portable-x.y.z.exe` desde la última release.
 Cada versión nueva se publica automáticamente en Releases con su instalador.
 
 ## Características
