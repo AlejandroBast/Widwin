@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+<title>DeskWidgets</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside>
+  <h1>DeskWidgets</h1>
+  <div class="actions">
+    <button id="btn-new" class="primary">+ Nuevo</button>
+    <button id="btn-import">Importar .html</button>
+  </div>
+  <ul id="list"></ul>
+  <label class="foot"><input type="checkbox" id="autostart"> Iniciar con Windows</label>
+</aside>
+
+<main>
+  <div id="empty" class="empty">
+    <p>Aún no tienes widgets.</p>
+    <p>Crea uno con <b>+ Nuevo</b> o importa un archivo HTML.</p>
+  </div>
+
+  <section id="panel" hidden>
+    <header>
+      <input id="f-name" class="title" spellcheck="false">
+      <button id="btn-edit">Mover / redimensionar</button>
+      <button id="btn-reload">Recargar</button>
+      <button id="btn-folder">Carpeta</button>
+      <button id="btn-delete" class="danger">Eliminar</button>
+    </header>
+
+    <div class="grid">
+      <label>X <input id="f-x" type="number"></label>
+      <label>Y <input id="f-y" type="number"></label>
+      <label>Ancho <input id="f-width" type="number" min="80"></label>
+      <label>Alto <input id="f-height" type="number" min="60"></label>
+      <label>Opacidad <input id="f-opacity" type="range" min="0.1" max="1" step="0.05"></label>
+      <label class="chk"><input id="f-alwaysOnTop" type="checkbox"> Siempre encima</label>
+      <label class="chk"><input id="f-clickThrough" type="checkbox"> Ignorar clics (solo mostrar)</label>
+    </div>
+
+    <div class="editor-head">
+      <span>index.html</span>
+      <span id="status"></span>
+      <button id="btn-save" class="primary">Guardar y aplicar (Ctrl+S)</button>
+    </div>
+    <textarea id="code" spellcheck="false"></textarea>
+  </section>
+</main>
+
+<div id="modal" hidden>
+  <div class="box">
+    <h2>Nuevo widget</h2>
+    <label>Nombre <input id="n-name" value="Mi widget"></label>
+    <label>Plantilla <select id="n-tpl"></select></label>
+    <div class="row">
+      <button id="n-cancel">Cancelar</button>
+      <button id="n-ok" class="primary">Crear</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
