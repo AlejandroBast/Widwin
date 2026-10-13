@@ -4,10 +4,39 @@
   "description": "Widgets de escritorio personalizados creados con HTML",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --win"
   },
   "license": "MIT",
   "devDependencies": {
-    "electron": "^44.7.0"
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlejandroBast/Widwin.git"
+  },
+  "author": "AlejandroBast",
+  "build": {
+    "appId": "com.alejandrobast.widwin",
+    "productName": "DeskWidgets",
+    "files": [
+      "main.js",
+      "widget-preload.js",
+      "manager-preload.js",
+      "templates.js",
+      "manager/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "DeskWidgets-Setup-${version}.${ext}"
+    }
   }
 }
