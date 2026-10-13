@@ -234,7 +234,8 @@ function createTray() {
 // ---------- inicio con Windows ----------
 function loginArgs() {
   return {
-    path: process.execPath,
+    // En la versión portable, execPath apunta a una carpeta temporal.
+    path: process.env.PORTABLE_EXECUTABLE_FILE || process.execPath,
     args: app.isPackaged ? ['--hidden'] : [app.getAppPath(), '--hidden'],
   };
 }
