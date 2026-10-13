@@ -25,7 +25,9 @@
       "widget-preload.js",
       "manager-preload.js",
       "templates.js",
-      "manager/**/*"
+      "manager/**/*",
+      "build/icon.png",
+      "build/tray.png"
     ],
     "directories": {
       "output": "dist"
@@ -34,7 +36,8 @@
       "target": [
         "nsis",
         "portable"
-      ]
+      ],
+      "icon": "build/icon.png"
     },
     "nsis": {
       "oneClick": false,

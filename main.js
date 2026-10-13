@@ -185,7 +185,7 @@ function openManager() {
   }
   manager = new BrowserWindow({
     width: 1040, height: 700, minWidth: 780, minHeight: 520,
-    backgroundColor: '#14161c', title: 'DeskWidgets', autoHideMenuBar: true,
+    backgroundColor: '#150124', title: 'DeskWidgets', icon: iconPath('icon.png'), autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'manager-preload.js'),
       contextIsolation: true,
@@ -203,25 +203,10 @@ function openManager() {
 }
 
 // ---------- bandeja ----------
-function makeIcon() {
-  const s = 32, buf = Buffer.alloc(s * s * 4);
-  for (let y = 0; y < s; y++) {
-    for (let x = 0; x < s; x++) {
-      const i = (y * s + x) * 4;
-      const r = 7, cx = Math.min(Math.max(x, r), s - 1 - r), cy = Math.min(Math.max(y, r), s - 1 - r);
-      const inside = (x - cx) ** 2 + (y - cy) ** 2 <= r * r;
-      const grid = x > 7 && x < 24 && y > 7 && y < 24 && (x === 15 || x === 16 || y === 15 || y === 16);
-      buf[i] = grid ? 255 : 255; // B
-      buf[i + 1] = grid ? 255 : 140; // G
-      buf[i + 2] = grid ? 255 : 90; // R
-      buf[i + 3] = inside ? 255 : 0;
-    }
-  }
-  return nativeImage.createFromBitmap(buf, { width: s, height: s });
-}
+const iconPath = (n) => path.join(__dirname, "build", n);
 
 function createTray() {
-  tray = new Tray(makeIcon());
+  tray = new Tray(nativeImage.createFromPath(iconPath("tray.png")));
   tray.setToolTip('DeskWidgets');
   tray.on('click', openManager);
   tray.setContextMenu(Menu.buildFromTemplate([
