@@ -1,6 +1,6 @@
 {
   "name": "widwin",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Widgets de escritorio personalizados creados con HTML",
   "main": "main.js",
   "scripts": {
@@ -42,7 +42,8 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "artifactName": "Widwin-Setup-${version}.${ext}"
+      "artifactName": "Widwin-Setup-${version}.${ext}",
+      "differentialPackage": false
     },
     "portable": {
       "artifactName": "Widwin-Portable-${version}.${ext}"
@@ -52,7 +53,8 @@
         "provider": "github",
         "owner": "AlejandroBast",
         "repo": "Widwin",
-        "releaseType": "release"
+        "releaseType": "release",
+        "publishAutoUpdate": false
       }
     ]
   }
