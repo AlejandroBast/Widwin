@@ -1,6 +1,6 @@
 {
   "name": "deskwidgets",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Widgets de escritorio personalizados creados con HTML",
   "main": "main.js",
   "scripts": {
@@ -31,12 +31,26 @@
       "output": "dist"
     },
     "win": {
-      "target": "nsis"
+      "target": [
+        "nsis",
+        "portable"
+      ]
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "artifactName": "DeskWidgets-Setup-${version}.${ext}"
-    }
+    },
+    "portable": {
+      "artifactName": "DeskWidgets-Portable-${version}.${ext}"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "AlejandroBast",
+        "repo": "Widwin",
+        "releaseType": "release"
+      }
+    ]
   }
 }
