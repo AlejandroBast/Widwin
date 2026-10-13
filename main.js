@@ -185,7 +185,7 @@ function openManager() {
   }
   manager = new BrowserWindow({
     width: 1040, height: 700, minWidth: 780, minHeight: 520,
-    backgroundColor: '#150124', title: 'DeskWidgets', icon: iconPath('icon.png'), autoHideMenuBar: true,
+    backgroundColor: '#150124', title: 'Widwin', icon: iconPath('icon.png'), autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'manager-preload.js'),
       contextIsolation: true,
@@ -207,7 +207,7 @@ const iconPath = (n) => path.join(__dirname, "build", n);
 
 function createTray() {
   tray = new Tray(nativeImage.createFromPath(iconPath("tray.png")));
-  tray.setToolTip('DeskWidgets');
+  tray.setToolTip('Widwin');
   tray.on('click', openManager);
   tray.setContextMenu(Menu.buildFromTemplate([
     { label: 'Abrir gestor de widgets', click: openManager },
@@ -319,7 +319,16 @@ app.on('before-quit', () => { quitting = true; });
 // Sin esto Electron saldría al no quedar ventanas visibles; queremos seguir en la bandeja.
 app.on('window-all-closed', () => {});
 
+// Antes la app se llamaba DeskWidgets: si hay datos viejos, se copian a la carpeta nueva una sola vez.
+function migrateLegacyData() {
+  const legacy = path.join(app.getPath("appData"), "deskwidgets");
+  if (fs.existsSync(legacy) && !fs.existsSync(widgetsRoot())) {
+    try { fs.cpSync(legacy, app.getPath("userData"), { recursive: true }); } catch {}
+  }
+}
+
 app.whenReady().then(() => {
+  migrateLegacyData();
   // Primera ejecución: arrancar con Windows para que los widgets estén siempre activos.
   if (!fs.existsSync(settingsFile())) {
     fs.writeFileSync(settingsFile(), JSON.stringify({ autostartInitialized: true }));
