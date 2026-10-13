@@ -1,0 +1,13 @@
+{
+  "name": "deskwidgets",
+  "version": "1.0.0",
+  "description": "Widgets de escritorio personalizados creados con HTML",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^44.7.0"
+  }
+}
