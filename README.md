@@ -47,15 +47,3 @@ npm run dist     # generar el instalador en dist/
 ```
 
 Requiere Node.js 20 o superior.
-
-## Publicar una nueva versión
-
-1. Sube la versión en `package.json` (por ejemplo `1.1.0`).
-2. Haz commit y crea la etiqueta:
-
-   ```bash
-   git tag v1.1.0
-   git push origin main --tags
-   ```
-
-3. GitHub Actions compila el instalador y lo publica en [Releases](https://github.com/AlejandroBast/Widwin/releases).
