@@ -1,4 +1,8 @@
-# DeskWidgets (Widwin)
+<p align="center">
+  <img src="build/icon.png" alt="Widwin" width="140">
+</p>
+
+<h1 align="center">Widwin</h1>
 
 Aplicación de escritorio para Windows que te deja crear **widgets personalizados con HTML, CSS y JS**. Cada widget vive en el escritorio, sin marco, con fondo transparente, y **no se cierra** hasta que tú lo elimines.
 
@@ -6,10 +10,10 @@ Aplicación de escritorio para Windows que te deja crear **widgets personalizado
 
 | | |
 |---|---|
-| **Última versión** | [**Descargar DeskWidgets para Windows**](https://github.com/AlejandroBast/Widwin/releases/latest) |
+| **Última versión** | [**Descargar Widwin para Windows**](https://github.com/AlejandroBast/Widwin/releases/latest) |
 | **Todas las versiones** | [Releases](https://github.com/AlejandroBast/Widwin/releases) |
 
-Descarga el instalador `DeskWidgets-Setup-x.y.z.exe` (recomendado) o la versión sin instalación `DeskWidgets-Portable-x.y.z.exe` desde la última release.
+Descarga el instalador `Widwin-Setup-x.y.z.exe` (recomendado) o la versión sin instalación `Widwin-Portable-x.y.z.exe` desde la última release.
 Cada versión nueva se publica automáticamente en Releases con su instalador.
 
 ## Características
@@ -25,12 +29,12 @@ Cada versión nueva se publica automáticamente en Releases con su instalador.
 
 ## Uso rápido
 
-1. Abre DeskWidgets y pulsa **+ Nuevo**.
+1. Abre Widwin y pulsa **+ Nuevo**.
 2. Elige una plantilla y edita su HTML en el editor.
 3. **Guardar y aplicar** (Ctrl+S) para ver el cambio al instante.
 4. **Mover / redimensionar** para colocarlo; pulsa **Listo** en el widget al terminar.
 
-Los widgets se guardan en `%APPDATA%\deskwidgets\widgets\<id>\index.html` (botón **Carpeta** en el gestor).
+Los widgets se guardan en `%APPDATA%\widwin\widgets\<id>\index.html` (botón **Carpeta** en el gestor).
 
 > Nota: no están anclados al escritorio real, así que "Mostrar escritorio" (Win+D) puede ocultarlos. Activa **Siempre encima** en el widget si quieres evitarlo.
 
