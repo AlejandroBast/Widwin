@@ -6,8 +6,8 @@ const base = `
   html,body{margin:0;height:100%;background:transparent;overflow:hidden;
     font-family:"Segoe UI",system-ui,sans-serif;color:#fff;user-select:none}
   .card{height:100%;border-radius:20px;padding:16px;
-    background:rgba(20,22,30,.72);backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 30px rgba(0,0,0,.35)}
+    background:rgba(26,1,44,.78);backdrop-filter:blur(14px);
+    border:1px solid rgba(253,41,197,.35);box-shadow:0 8px 30px rgba(21,1,36,.55)}
 `;
 
 module.exports = {

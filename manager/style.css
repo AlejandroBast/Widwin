@@ -1,24 +1,26 @@
-:root{--bg:#14161c;--panel:#1b1e26;--line:#2a2e39;--fg:#e8eaf0;--mut:#8a90a2;--acc:#5a8cff;--red:#ff5c6c}
+:root{--bg:#150124;--panel:#22083a;--line:#3a1560;--fg:#f3e8fb;--mut:#a58bbd;--acc:#e600c7;--red:#ff5c6c}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:14px "Segoe UI",system-ui,sans-serif}
 body{display:flex}
 button{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer;font:inherit}
 button:hover{border-color:var(--acc)}
-button.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+button.primary{background:linear-gradient(135deg,#fd29c5,#d102c8);border-color:#fd29c5;color:#fff;font-weight:600}
+button.primary:hover{filter:brightness(1.12)}
 button.danger:hover{border-color:var(--red);color:var(--red)}
 button.on{background:var(--acc);border-color:var(--acc);color:#fff}
 input,select,textarea{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:inherit}
 input:focus,select:focus,textarea:focus{outline:0;border-color:var(--acc)}
 
 aside{width:250px;border-right:1px solid var(--line);display:flex;flex-direction:column;padding:16px;gap:12px}
-aside h1{margin:0;font-size:18px}
+aside h1{margin:0;font-size:18px;display:flex;align-items:center;gap:10px}
+aside h1 img{width:30px;height:30px}
 .actions{display:flex;gap:8px}.actions button{flex:1;padding:7px 4px}
 #list{list-style:none;margin:0;padding:0;flex:1;overflow:auto}
 #list li{padding:9px 10px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:8px}
 #list li:hover{background:var(--panel)}
 #list li.sel{background:var(--panel);box-shadow:inset 0 0 0 1px var(--acc)}
-#list .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;flex:none}
-#list .dot.edit{background:var(--acc)}
+#list .dot{width:8px;height:8px;border-radius:50%;background:#7a5a96;flex:none}
+#list .dot.edit{background:#fd29c5;box-shadow:0 0 6px #fd29c5}
 #list .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .foot{color:var(--mut);font-size:13px;display:flex;gap:8px;align-items:center}
 
@@ -33,10 +35,10 @@ header{display:flex;gap:8px;align-items:center}
 .grid label.chk{flex-direction:row;align-items:center;gap:8px;color:var(--fg);font-size:13px;grid-column:span 2}
 .editor-head{display:flex;align-items:center;gap:10px;color:var(--mut)}
 .editor-head span:first-child{flex:1}
-#status{color:#3ddc84;font-size:12px}
+#status{color:#fd40bf;font-size:12px}
 #code{flex:1;resize:none;font:13px/1.5 Consolas,"Cascadia Mono",monospace;tab-size:2;white-space:pre}
 
-#modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center}
+#modal{position:fixed;inset:0;background:rgba(10,0,20,.7);display:flex;align-items:center;justify-content:center}
 #modal .box{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px;width:340px;display:flex;flex-direction:column;gap:12px}
 #modal h2{margin:0;font-size:16px}
 #modal label{display:flex;flex-direction:column;gap:4px;color:var(--mut);font-size:12px}

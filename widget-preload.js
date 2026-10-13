@@ -31,8 +31,8 @@ function render() {
   }
 
   overlay = el(
-    'position:fixed;inset:0;z-index:2147483647;background:rgba(90,140,255,.18);' +
-      'outline:2px dashed #5a8cff;outline-offset:-2px;-webkit-app-region:drag;cursor:move;' +
+    'position:fixed;inset:0;z-index:2147483647;background:rgba(230,0,199,.2);' +
+      'outline:2px dashed #fd29c5;outline-offset:-2px;-webkit-app-region:drag;cursor:move;' +
       'font:12px "Segoe UI",system-ui,sans-serif;color:#fff;user-select:none'
   );
 
@@ -40,7 +40,7 @@ function render() {
   const label = el('flex:1;background:rgba(0,0,0,.6);padding:4px 8px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis');
   label.textContent = state.name + ' · arrastra para mover';
   const done = el(
-    'background:#5a8cff;padding:4px 10px;border-radius:8px;cursor:pointer;font-weight:600;-webkit-app-region:no-drag',
+    'background:#e600c7;padding:4px 10px;border-radius:8px;cursor:pointer;font-weight:600;-webkit-app-region:no-drag',
     'Listo'
   );
   done.addEventListener('click', () => ipcRenderer.send('widget:done'));
@@ -48,7 +48,7 @@ function render() {
 
   const grip = el(
     'position:absolute;right:0;bottom:0;width:22px;height:22px;cursor:nwse-resize;-webkit-app-region:no-drag;' +
-      'background:linear-gradient(135deg,transparent 50%,#5a8cff 50%);border-bottom-right-radius:6px'
+      'background:linear-gradient(135deg,transparent 50%,#fd29c5 50%);border-bottom-right-radius:6px'
   );
   grip.addEventListener('pointerdown', (e) => {
     grip.setPointerCapture(e.pointerId);
